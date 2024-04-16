@@ -1,0 +1,97 @@
+PS C:\Users\Mery\Desktop\MIPRUEBA> git add .
+PS C:\Users\Mery\Desktop\MIPRUEBA> git commit -m "Mi segunda prueba"
+[development d8500be] Mi segunda prueba
+ delete mode 100644 archivo.txt
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Writing objects: 100% (2/2), 241 bytes | 241.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MeryBr/Lemon.git
+   c5084d4..d8500be  development -> development
+PS C:\Users\Mery\Desktop\MIPRUEBA> git push
+Everything up-to-date
+PS C:\Users\Mery\Desktop\MIPRUEBA> git commit -m "Mi primera prueba"
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\Mery\Desktop\MIPRUEBA> git push
+Counting objects: 100% (7/7), done.
+Writing objects: 100% (4/4), 328 bytes | 328.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MeryBr/Lemon.git
+PS C:\Users\Mery\Desktop\MIPRUEBA> git branch development
+Already on 'development'
+Your branch is up to date with 'origin/development'.
+PS C:\Users\Mery\Desktop\MIPRUEBA> git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+PS C:\Users\Mery\Desktop\MIPRUEBA> git add . "Hola"
+fatal: pathspec 'Hola' did not match any files
+PS C:\Users\Mery\Desktop\MIPRUEBA> git add .  
+PS C:\Users\Mery\Desktop\MIPRUEBA> git commit -"Un plus"  
+error: unknown switch `U'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --signoff         add a Signed-off-by trailer
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --no-post-rewrite     bypass post-rewrite hook
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+PS C:\Users\Mery\Desktop\MIPRUEBA> git push -u origin development
+Everything up-to-date
+branch 'development' set up to track 'origin/development'.
+PS C:\Users\Mery\Desktop\MIPRUEBA> git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+PS C:\Users\Mery\Desktop\MIPRUEBA> git merge development
+Already up to date.
+PS C:\Users\Mery\Desktop\MIPRUEBA> git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/MeryBr/Lemon.git'
+PS C:\Users\Mery\Desktop\MIPRUEBA>
