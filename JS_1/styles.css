@@ -1,0 +1,176 @@
+/* Estilo general */
+body {
+  margin: auto;
+  max-width: 1280px;
+  padding: 0 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 8px;
+  border-bottom: 2px solid black;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 0;
+  overflow: auto;
+}
+
+nav a,
+nav svg {
+  white-space: nowrap;
+  color: #808080;
+  background-color: #ffffff;
+  padding: 16px;
+  text-decoration: none;
+  transition: color 0.3s;
+  border-bottom: none;
+  margin: 0 10px;
+}
+
+.nuevas-colecciones h1 {
+  font-size: 32px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.nuevas-colecciones .row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 16px auto;
+  padding: 16px;
+}
+
+.item img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin: 0 8px 32px;
+}
+
+.title,
+.price {
+  text-align: center;
+}
+
+.item {
+  position: relative;
+}
+
+.text-under-image {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.text-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title,
+.price {
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+}
+
+footer {
+  background-color: #212429;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-top: 2px solid #212429;
+}
+
+.footer-item {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin: 0 16px;
+}
+
+.footer-item .img-container {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.footer-item p,
+.footer-item span {
+  margin: 0;
+}
+
+.footer-item span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 920px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    margin-top: 20px;
+  }
+
+  nav a,
+  nav svg {
+    margin: 10px 0;
+  }
+
+  footer {
+    padding: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-item {
+    margin: 10px 0;
+  }
+
+  .item {
+    max-width: 100%;
+  }
+}
