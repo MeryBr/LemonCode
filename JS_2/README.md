@@ -1,7 +1,7 @@
 # Laboratorio Módulo 2 - Tipos de datos y Operadores
----
+
 ## Descripción del ejercicio:
----
+
 Cena de cumpleaños entre amigos
 Tienes un grupo de 6 amigos y quieres invitarlos a cenar por tu cumpleaños.
 
@@ -17,9 +17,7 @@ console.log((120 - 18) / 6);
 
 // Como quedaría con el texto
 console.log("Cada amigo debe pagar: " + ((120 - 18) / 6) + " €");
-
----
-
+```
 *Resultado en la consola:*
 // Cálculo simple
 17
