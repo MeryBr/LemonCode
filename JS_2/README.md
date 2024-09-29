@@ -1,6 +1,6 @@
-#Laboratorio Módulo 2 - Tipos de datos y Operadores
+# Laboratorio Módulo 2 - Tipos de datos y Operadores
 ---
-##Descripción del ejercicio:
+## Descripción del ejercicio:
 ---
 Cena de cumpleaños entre amigos
 Tienes un grupo de 6 amigos y quieres invitarlos a cenar por tu cumpleaños.
@@ -10,12 +10,17 @@ Tienes un ticket de cena que cuesta 120 € y en el que ya se incluyen las bebid
 Calcula cuánto tendría que pagar cada comensal para dividir los costos de manera equitativa.
 Utiliza JavaScript para hacer el cálculo y mostrar el resultado por consola.
 
-// Calculo simple
+### Código:
+```javascript
+// Cálculo simple
 console.log((120 - 18) / 6);
-// Como quedaria con el texto
+
+// Como quedaría con el texto
 console.log("Cada amigo debe pagar: " + ((120 - 18) / 6) + " €");
 
-Resultado en la consola:
+---
+
+*Resultado en la consola:*
 // Cálculo simple
 17
 // Resultado
