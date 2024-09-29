@@ -1,6 +1,7 @@
-Laboratorio Módulo 2 - Tipos de datos y Operadores
-
-Descripción del ejercicio:
+#Laboratorio Módulo 2 - Tipos de datos y Operadores
+---
+##Descripción del ejercicio:
+---
 Cena de cumpleaños entre amigos
 Tienes un grupo de 6 amigos y quieres invitarlos a cenar por tu cumpleaños.
 
@@ -19,3 +20,4 @@ Resultado en la consola:
 17
 // Resultado
 Cada amigo debe pagar: 17.00 €
+
