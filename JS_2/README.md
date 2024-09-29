@@ -1,5 +1,6 @@
-# typescript-sandbox
+Laboratorio Módulo 2 - Tipos de datos y Operadores
 
+Descripción del ejercicio:
 Cena de cumpleaños entre amigos
 Tienes un grupo de 6 amigos y quieres invitarlos a cenar por tu cumpleaños.
 
