@@ -34,7 +34,7 @@ let generoRock : string = "🎸 Rock";
 let generoHardRock : string = "🤘 Hard Rock";
 let generoClasica : string = "🎼 Clásica";
 
-interface MusicBand {
+interface band{
   name: string;
   yearFounded: number;
   isActive: boolean;
@@ -42,16 +42,4 @@ interface MusicBand {
 }
 ```
 ### 2. Grupos musicales en consola, con estilos CSS:
-```javascript
-musicBands.forEach((band) => {
-  console.log(
-    `%c${band.name}`, 
-    'font-weight: bold; font-size: 16px; background-color: green; color: white;'
-  );
-  console.log(`Year Founded: ${band.yearFounded}`);
-  console.log(`Active: ${band.isActive}`);
-  console.log(`Genre: ${band.genre}`);
-});
-
-```
 
