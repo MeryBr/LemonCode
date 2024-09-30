@@ -41,5 +41,4 @@ interface band{
   genre: string;
 }
 ```
-### 2. Grupos musicales en consola, con estilos CSS:
 
