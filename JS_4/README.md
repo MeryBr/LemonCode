@@ -20,4 +20,4 @@ Por ejemplo, si el turno es 1, se mostrará como 01.
 Esto se logra utilizando la función `padStart(2, '0')` para formatear el número adecuadamente.
 
 ## Captura de Pantalla
-![Captura de pantalla](src/content/img/JS_4.png)
+![Captura de pantalla](src/content/img/JS_4.PNG)
