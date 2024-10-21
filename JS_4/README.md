@@ -19,5 +19,5 @@ Si se ingresa un valor válido, el turno se actualizara en pantalla.
 Por ejemplo, si el turno es 1, se mostrará como 01.
 Esto se logra utilizando la función `padStart(2, '0')` para formatear el número adecuadamente.
 
-## Captura de Pantalla
+## Imagen
 ![Captura de pantalla](src/img/JS_4.PNG)
