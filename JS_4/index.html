@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="src/content/icons/favicon.png" />
+  <link rel="stylesheet" href="./src/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Próximo Turno</title>
+</head>
+
+<body>
+  <div class="turno-display">
+    <h1 id="numero-turno">00</h1>
+    <p class="texto-turno">Por favor, acérquese al mostrador</p>
+    <br />
+    <div class="controles">
+      <button id="boton-anterior">Anterior</button>
+      <button id="boton-siguiente">Siguiente</button>
+      <button id="boton-reset">Reset</button>
+    </div>
+    <br />
+    <input id="input-turno" type="number" placeholder="Ingrese número de turno">
+    <p id="advertencia-input"></p>
+    <button id="boton-confirmar">Confirmar</button>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
