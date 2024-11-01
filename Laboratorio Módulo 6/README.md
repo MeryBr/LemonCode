@@ -1,47 +1,24 @@
-# Proyecto: Siete y Media
+# Proyecto: Siete y Media - Refactorización
 
 ## Enunciado
-Este proyecto consiste en implementar el juego "Siete y Media", donde los jugadores pueden pedir cartas y sumar puntos, tratando de no superar 7.5.
+En este laboratorio, refactorizamos el juego "Siete y Media" para hacerlo más mantenible y reutilizable, separando las responsabilidades en diferentes módulos.
 
 ## Requisitos Implementados
 
-### 1. Mostrar Puntuación
-- Se creó una variable `puntuacion` para almacenar la puntuación del usuario, inicializándola en 0.
-- Se añadió un `div` en el HTML para mostrar la puntuación.
-- Implementé la función `muestraPuntuacion`, que actualiza el `div` con la puntuación actual. Esta función se invoca al cargar el DOM.
+### 1. Modelo
+- Se movió la clase `Partida` a `model.ts`, donde se inicializa la puntuación y se gestionan los métodos del juego.
 
-### 2. Pedir Carta
-- Se generó la función `dameCarta`, que devuelve una carta aleatoria.
-- Se añadió un botón en el HTML que llama a `dameCarta` al pulsarlo, mostrando la carta en la consola.
-- Para evitar los valores 8 y 9, se generó un número aleatorio entre 1 y 10 y se ajustaron los valores mayores a 7.
+### 2. Motor
+- La lógica del juego ahora está en `motor.ts`. Se implementó `dameCarta`, que genera cartas aleatorias y controla los puntos.
 
-### 3. Mostrar Carta
-- Implementé la función `mostrarCarta(carta: number): void`, que muestra la carta elegida.
-- Se añadió un elemento `<img>` en el HTML con una imagen de carta boca abajo. Utilicé un `switch` para mapear el valor de la carta a su respectiva imagen.
+### 3. UI
+- La interfaz de usuario se organiza en `ui.ts`. Las funciones `muestraPuntuacion` y `mostrarCarta` actualizan la UI separando la presentación de la lógica del juego.
 
-### 4. Sumar Puntuación
-- Después de mostrar la carta, se suma el valor de la carta a la variable `puntuacion`.
-- Se invoca `muestraPuntuacion` para actualizar la puntuación en pantalla.
+### 4. Limpieza en `main.ts`
+- Se eliminaron definiciones en `main.ts`, que ahora solo gestiona la interacción del usuario y el flujo del juego.
 
-### 5. Game Over
-- Se implementó una lógica que verifica si la puntuación supera 7.5, mostrando un mensaje de "Game Over" y deshabilitando la opción de pedir más cartas.
-
-### 6. Me Planto
-- Se añadió un botón para que el usuario se plante.
-- Dependiendo de la puntuación, se muestra un mensaje específico:
-  - Menor que 4: "Has sido muy conservador."
-  - 5: "Te ha entrado el canguelo eh?"
-  - 6 o 7: "Casi casi..."
-  - 7.5: "¡Lo has clavado! ¡Enhorabuena!"
-
-### 7. Nueva Partida
-- Al finalizar la partida, se muestra un botón que permite al usuario iniciar una nueva partida.
-
-### 8. Estilo de la Aplicación
-- Se aplicó CSS para estilizar la aplicación, añadiendo fondo, mejorando márgenes, espacios y colores.
-
-## Apartado Opcional
-- Se implementó un botón que permite al usuario ver qué habría pasado si hubiera seguido pidiendo cartas tras plantarse.
+### 5. Objeto Partida (Opcional)
+- Se creó un objeto `Partida` con un método para inicializar nuevas partidas, mejorando la estructura y reutilización del código.
 
 ## Imagen
-![Captura de pantalla](src/img/JS_5.png)
+![Captura de pantalla del juego](src/img/JS_5.png)
