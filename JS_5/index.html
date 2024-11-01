@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juego "Siete y Media"</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <h1>Juego de las siete y media</h1>
+    </header>
+
+    <section class="game">
+      <div class="table">
+        <div id="points-info">Puntos: <span id="points">0</span></div>
+      </div>
+      <img id="img-carta" src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg"
+        alt="Carta" />
+    </section>
+
+    <div id="game-controls">
+      <div>
+        <button id="btn-carta">Nueva Carta</button>
+        <button id="btn-reinicio" style="display: none;">Reiniciar</button>
+        <button id="btn-plantarse">Plantarse</button>
+        <button id="btn-ver-posibilidades" style="display: none;">Ver Posibilidades</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.ts"></script>
+</body>
+
+</html>
