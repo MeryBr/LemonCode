@@ -67,7 +67,7 @@ body {
 .cartas-historial {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Espacio entre las cartas */
+  gap: 10px; 
 }
 
 .carta {
@@ -77,14 +77,14 @@ body {
   justify-content: center; 
   align-items: center; 
   border: 2px solid #000; 
-  margin: 10px; /* Margen alrededor de la carta */
-  padding: 5px; /* Espacio interno de la carta */
-  background-color: #fff; /* Fondo blanco para las cartas */
+  margin: 10px; 
+  padding: 5px; 
+  background-color: #fff; 
 }
 
 img {
-  max-width: 100%; /* Asegúrate de que las imágenes no se desborden */
-  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 100%;
+  height: auto; 
 }
 
 .game-historial div {

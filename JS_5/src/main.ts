@@ -34,7 +34,7 @@ if (
   // Carta aleatoria
   function dameCarta(): number {
     const carta = Math.floor(Math.random() * 10) + 1;
-    return (carta > 7) ? carta + 2 : carta; // cartas de 1 a 12
+    return (carta > 7) ? carta + 2 : carta; 
   }
 
   // Mostrar carta
