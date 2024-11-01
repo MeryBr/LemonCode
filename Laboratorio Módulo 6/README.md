@@ -19,6 +19,3 @@ En este laboratorio, refactorizamos el juego "Siete y Media" para hacerlo más m
 
 ### 5. Objeto Partida (Opcional)
 - Se creó un objeto `Partida` con un método para inicializar nuevas partidas, mejorando la estructura y reutilización del código.
-
-## Imagen
-![Captura de pantalla del juego](src/img/JS_5.png)
