@@ -42,3 +42,6 @@ Este proyecto consiste en implementar el juego "Siete y Media", donde los jugado
 
 ## Apartado Opcional
 - Se implementó un botón que permite al usuario ver qué habría pasado si hubiera seguido pidiendo cartas tras plantarse.
+
+## Imagen
+![Captura de pantalla](src/img/JS_5.png)
