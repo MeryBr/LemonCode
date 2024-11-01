@@ -1,0 +1,234 @@
+:root {
+  font-family: 'Arial', sans-serif; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('/src/img/mesa-madera.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  font-size: 1em;
+}
+
+.app header {
+  background-color: rgba(23, 35, 35, 0.9); 
+  color: #e0e0e0; 
+  padding: 0px 20px;
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 1em;
+  width: 50vw;
+  margin-left: 25%;
+}
+
+.game {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10%;
+  background-color: rgba(255, 255, 255, 0.95); 
+  max-height: 400px; 
+  overflow-y: auto; 
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.table img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+.game-historial {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 20px; 
+  align-items: center;
+}
+
+.cartas-historial {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+}
+
+.carta {
+  width: 100px; 
+  height: 150px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  border: 2px solid #000; 
+  margin: 10px; 
+  padding: 5px; 
+  background-color: #fff; 
+}
+
+img {
+  max-width: 100%;
+  height: auto; 
+}
+
+.game-historial div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.game-historial div img {
+  width: 100px; 
+  height: 100px; 
+  object-fit: cover; 
+  border-radius: 5px;
+}
+
+#game-controls {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(47, 57, 63, 0.9);
+  border-radius: 0px 0px 10px 10px;
+}
+
+#game-controls div {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  padding-bottom: 20px;
+  font-size: 1.5em;
+}
+
+button {
+  background-color: #5a9b24; 
+  border: none; 
+  color: white; 
+  padding: 15px 32px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 16px; 
+  margin: 10px 0; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  transition: background-color 0.3s, transform 0.2s; 
+}
+
+button:hover {
+  background-color: #4CAF50; 
+  transform: scale(1.05); 
+}
+
+button:disabled {
+  background-color: grey;
+  color: #666;
+}
+
+button:hover:disabled {
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #8d2119; 
+  color: white;
+}
+
+#boton-plantarme {
+  background-color: #FFC107; 
+}
+
+#boton-plantarme:hover {
+  background-color: #be7200; 
+}
+
+#boton-nueva-partida {
+  display: none;
+  background-color: #0093FE; 
+}
+
+#boton-nueva-partida:hover {
+  background-color: #005FC2; 
+}
+
+#boton-proxima-carta {
+  position: absolute;
+  display: none;
+  background-color: #FFC107; 
+  text-align: center;
+  top: 250px;
+  font-size: 0.8em;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #213547;
+}
+
+#boton-proxima-carta:hover {
+  background-color: #be7200; 
+}
+
+#points-info {
+  font-family: 'Georgia', serif; 
+  font-size: 1.7em;
+  color: #4CAF50;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#points {
+  font-size: 1.5em; 
+  font-weight: bold;
+  color: #FFD700; 
+  padding: 10px; 
+  background-color: rgba(23, 35, 35, 0.9); 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+@media (max-width: 1025px) {
+  .app {
+    width: 100%;
+    margin-left: 0px;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 501px) {
+  #points-info {
+    font-size: 1em;
+  }
+  button {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 401px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 331px) {
+  header h1 {
+    font-size: 1em;
+  }
+}
