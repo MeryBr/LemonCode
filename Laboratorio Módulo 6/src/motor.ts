@@ -1,22 +1,38 @@
-//Este archivo contendrá las reglas y lógica del juego, como la obtención de cartas y el cálculo de puntuación.
+import { Juego } from './modelo';
 
-import { Partida } from './modelo';
+export class Motor {
+    juego: Juego;
 
-export function dameCarta(): number {
-  const carta = Math.floor(Math.random() * 10) + 1;
-  return carta > 7 ? carta + 2 : carta; 
-}
+    constructor() {
+        this.juego = new Juego();
+    }
 
-export function sumarPuntos(partida: Partida, carta: number): void {
-  const valor = carta > 7 ? 0.5 : carta;
-  partida.puntuacion += valor;
-  partida.cartasPedidas.push(carta);
-}
+    procesarCarta() {
+        const carta = this.juego.dameCarta();
+        this.juego.cartasPedidas.push(carta);
+        this.juego.sumarPuntos(carta);
+        return carta;
+    }
 
-export function verificarFinDeJuego(partida: Partida): boolean {
-  if (partida.puntuacion > 7.5) {
-    partida.juegoActivo = false;
-    return true;
-  }
-  return false;
+    verificarFinDelJuego(): boolean {
+        if (this.juego.puntuacion > 7.5) {
+            alert('Game Over! Te has pasado de 7.5 puntos.');
+            this.juego.juegoActivo = false;
+            return true;
+        }
+        return false;
+    }
+
+    mostrarAlertaPorPuntuacion() {
+        const puntuacion = this.juego.puntuacion;
+        if (puntuacion < 4) {
+            alert('Has sido muy conservador... 🐢 ¡No tengas miedo de arriesgar un poco!');
+        } else if (puntuacion === 5) {
+            alert('Te ha entrado el canguelo, ¿eh? 😅 ¡Vamos, atrévete un poco más!');
+        } else if (puntuacion === 6 || puntuacion === 7) {
+            alert('¡Casi casi! 🎯 ¡Estás a un paso de la gloria!');
+        } else if (puntuacion === 7.5) {
+            alert('¡Lo has clavado! 🎉 ¡Perfecto, eres imbatible! 👑🥳');
+        }
+    }
 }

@@ -1,16 +1,28 @@
-//Este archivo va a contener el modelo de datos que usamos en el juego, como la puntuación y el estado del juego.
-
-export interface Partida {
+export class Juego {
     puntuacion: number;
-    cartasPedidas: number[];
     juegoActivo: boolean;
-  }
-  
-  export function crearPartida(): Partida {
-    return {
-      puntuacion: 0,
-      cartasPedidas: [],
-      juegoActivo: true,
-    };
-  }
-  
+    cartasPedidas: number[];
+
+    constructor() {
+        this.puntuacion = 0;
+        this.juegoActivo = true;
+        this.cartasPedidas = [];
+    }
+
+    dameCarta(): number {
+        const carta = Math.floor(Math.random() * 10) + 1;
+        return (carta > 7) ? carta + 2 : carta; 
+    }
+
+    sumarPuntos(carta: number) {
+        if (carta > 7) carta = 0.5; 
+        this.puntuacion += carta;
+        console.log(`Puntuación actual: ${this.puntuacion}`);
+    }
+
+    reiniciar() {
+        this.puntuacion = 0;
+        this.juegoActivo = true;
+        this.cartasPedidas = [];
+    }
+}
