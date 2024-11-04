@@ -1,6 +1,5 @@
-import { Motor } from './motor';
-import { UI } from './ui';
+import { Juego } from './model';
+import { setupUI } from './ui';
 
-const motor = new Motor();
-const ui = new UI(motor);
-window.onload = () => ui.inicializarJuego();
+const juego = new Juego();
+setupUI(juego);
