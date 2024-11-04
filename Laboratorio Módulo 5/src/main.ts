@@ -1,9 +1,7 @@
-// Variables globales
 let puntuacion = 0;
 let juegoActivo = true;
 let cartasPedidas: number[] = [];
 
-// Elemento HTML
 const puntosInfo = document.getElementById('points') as HTMLSpanElement;
 const imgCarta = document.getElementById('img-carta') as HTMLImageElement;
 const btnCarta = document.getElementById('btn-carta') as HTMLButtonElement;
@@ -31,19 +29,16 @@ if (
     btnVerPosibilidades.style.display = 'none';
   }
 
-  // Carta aleatoria
   function dameCarta(): number {
     const carta = Math.floor(Math.random() * 10) + 1;
-    return (carta > 7) ? carta + 2 : carta; 
+    return (carta > 7) ? carta + 2 : carta;
   }
 
-  // Mostrar carta
   function mostrarCarta(carta: number) {
     const cartaImg = obtenerImagenDeCarta(carta);
     imgCarta.src = cartaImg;
   }
 
-  // Imagenes de las cartas
   function obtenerImagenDeCarta(carta: number): string {
     switch (carta) {
       case 1: return 'https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/copas/1_as-copas.jpg';
@@ -60,13 +55,10 @@ if (
     }
   }
 
-  // Sumar los puntos
   function sumarPuntos(carta: number) {
-    if (carta > 7) carta = 0.5; 
+    if (carta > 7) carta = 0.5;
     puntuacion += carta;
     puntosInfo.textContent = puntuacion.toString();
-    console.log(`Puntuación actual: ${puntuacion}`);
-
     if (puntuacion > 7.5) {
       setTimeout(() => {
         alert('Game Over! Te has pasado de 7.5 puntos.');
@@ -77,7 +69,6 @@ if (
     }
   }
 
-  // Mostrar las alertas por puntuación
   function mostrarAlertaPorPuntuacion(puntuacion: number) {
     if (puntuacion < 4) {
       alert('Has sido muy conservador... 🐢 ¡No tengas miedo de arriesgar un poco!');
@@ -90,7 +81,6 @@ if (
     }
   }
 
-  // Evento de Nueva Carta
   btnCarta.addEventListener('click', () => {
     if (juegoActivo) {
       const carta = dameCarta();
@@ -100,7 +90,6 @@ if (
     }
   });
 
-  // Evento de Plantarse
   btnPlantarse.addEventListener('click', () => {
     if (juegoActivo) {
       juegoActivo = false;
@@ -112,24 +101,20 @@ if (
     }
   });
 
-  // Evento de Ver Posibilidades
   btnVerPosibilidades.addEventListener('click', () => {
     if (!juegoActivo) {
       let posiblesCartas: number[] = [];
-      const totalCartas = 12; 
+      const totalCartas = 12;
       while (posiblesCartas.length < 3) {
         const cartaFutura = dameCarta();
-
         if (!cartasPedidas.includes(cartaFutura) && !posiblesCartas.includes(cartaFutura)) {
           posiblesCartas.push(cartaFutura);
         }
-
         if (posiblesCartas.length + cartasPedidas.length >= totalCartas) {
           alert('No hay suficientes cartas nuevas disponibles para mostrar.');
           break;
         }
       }
-
       if (posiblesCartas.length > 0) {
         let resultado = "Si hubieras pedido más cartas, habrías obtenido:\n";
         posiblesCartas.forEach(carta => {
