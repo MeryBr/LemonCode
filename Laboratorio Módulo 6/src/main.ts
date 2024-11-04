@@ -1,5 +1,5 @@
-import { Juego } from './model';
-import { setupUI } from './ui';
+import { Partida, inicializarPartida } from './model';
+import { configurarUI } from './ui';
 
-const juego = new Juego();
-setupUI(juego);
+let partida: Partida = inicializarPartida();
+configurarUI(partida);

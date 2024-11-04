@@ -1,26 +1,13 @@
-
 export interface Partida {
-  cartasPedidas: number[];
   puntuacion: number;
+  cartasPedidas: number[];
   juegoActivo: boolean;
 }
 
-export class Juego {
-  private partida: Partida;
-
-  constructor() {
-      this.partida = this.inicializarPartida();
-  }
-
-  inicializarPartida(): Partida {
-      return {
-          cartasPedidas: [],
-          puntuacion: 0,
-          juegoActivo: true
-      };
-  }
-
-  getPartida(): Partida {
-      return this.partida;
-  }
-}
+export const inicializarPartida = (): Partida => {
+  return {
+    puntuacion: 0,
+    cartasPedidas: [],
+    juegoActivo: true,
+  };
+};
