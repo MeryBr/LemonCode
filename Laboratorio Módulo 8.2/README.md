@@ -8,15 +8,17 @@ Estamos desarrollando un software hospitalario, y el cliente nos pide poder real
 
 ### a) Queremos extraer la lista de paciente que están asignados a la especialidad de Pediatría
 
+```typescript
 const obtenPacientesAsignadosAPediatria = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
   return pacientes.filter((paciente) => paciente.especialidad === "Pediatra");
 };
-
+```
 
 ### b) Queremos extraer la lista de pacientes asignados a Pediatría y que tengan una edad menor de 10 años.
 
+```typescript
 const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
@@ -24,24 +26,26 @@ const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
     (paciente) => paciente.especialidad === "Pediatra" && paciente.edad < 10
   );
 };
-
+```
 
 ## Apartado 2
 
 ### c) Queremos activar el protocolo de urgencia si alguno de los pacientes tiene un ritmo cardíaco superior a 100 pulsaciones por minuto y una temperatura corporal superior a 39 grados.
 
+```typescript
 const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
   return pacientes.some(
     (paciente) =>
       paciente.frecuenciaCardiaca > 100 && paciente.temperatura > 39
   );
 };
-
+```
 
 ## Apartado 3
 
 ### d) El pediatra no puede atender hoy a los pacientes, queremos reasignar los pacientes asignados a la especialidad de pediatría a la de médico de familia.
 
+```typescript
 const reasignaPacientesAMedicoFamilia = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
@@ -51,21 +55,23 @@ const reasignaPacientesAMedicoFamilia = (
       : paciente
   );
 };
-
+```
 
 ## Apartado 4
 
 ### e) Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asignados), comprobamos si en la lista hay algún paciente asignado a pediatría.
 
+```typescript
 const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
   return pacientes.some((paciente) => paciente.especialidad === "Pediatra");
 };
-
+```
 
 ## Apartado OPCIONAL 5
 
 ### Queremos calcular el número total de pacientes que están asignados a la especialidad de Médico de familia, y lo que están asignados a Pediatría y a Cardiología.
 
+```typescript
 interface NumeroPacientesPorEspecialidad {
   medicoDeFamilia: number;
   pediatria: number;
@@ -93,3 +99,4 @@ const cuentaPacientesPorEspecialidad = (
     { medicoDeFamilia: 0, pediatria: 0, cardiologia: 0 }
   );
 };
+```
