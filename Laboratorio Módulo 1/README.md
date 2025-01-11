@@ -5,7 +5,7 @@ Abstract:xxx
 ## Papar Information
 
 - Title: `Nuevas Colecciones`
-- Authors: `Maia`
+- Authors: `Maria`
 - Preprint: [Enlace al preprint en ArXiv](https://arxiv.org/abs/xx)
 - Artículo completo: [Enlace al artículo completo](paper position)
 - Video: [Enlace al vídeo](video position)
