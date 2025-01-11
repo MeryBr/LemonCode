@@ -54,5 +54,5 @@ En la interfaz, se gestionan los clics sobre las cartas. Cuando el usuario hace 
 El diseño es completamente adaptable a diferentes tamaños de pantalla. Las cartas se organizan utilizando CSS Grid, lo que permite que el juego sea jugado cómodamente tanto en dispositivos móviles como en pantallas de escritorio.
 
 ## Imagen
-![Captura de pantalla](src/images/JS_8_3.png)
+![Captura de pantalla](src/content/images/JS_8_3.png)
 ---
