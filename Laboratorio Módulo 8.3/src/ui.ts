@@ -153,7 +153,6 @@ const voltearTodasLasCartasEncontradasHaciaAbajo = () : void => {
         if(tablero.cartas[i].encontrada === true){
             divlist[i].classList.add(__CSSCLASNAMES.exitAnimation);
             setTimeout(() => {
-                // Cuando termina la animación empiezan con la clase estandar
                 divlist[i].className = __CSSCLASNAMES.standardDiv;
             }, 380);
         }
