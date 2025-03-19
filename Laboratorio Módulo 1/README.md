@@ -1,113 +1,33 @@
-# Title
+# 🏗️ Bloque 1 - Laboratorio Módulo 1 - HTML  
 
-Abstract:xxx
+## 🛍️ Tienda de Ropa  
 
-## Papar Information
+Este es un ejercicio de maquetación donde hice una página web **de una tienda de ropa**.  
+El objetivo era que **se vea bien en distintos tamaños de pantalla** y que la estructura esté bien organizada.  
 
-- Title: `Nuevas Colecciones`
-- Authors: `Maria`
-- Preprint: [Enlace al preprint en ArXiv](https://arxiv.org/abs/xx)
-- Artículo completo: [Enlace al artículo completo](paper position)
-- Video: [Enlace al vídeo](video position)
+---
 
-## Install & Dependence
+## ✅ ¿Qué hice?  
 
-- python
-- pytorch
-- numpy
+- **Diseñé la sección "Nuevas Colecciones"** con imágenes y descripciones.  
+- **Usé Flexbox y Grid** para que la web se adapte a diferentes pantallas.  
+- **Puse una barra de navegación fija** que se mantiene al hacer scroll.  
+- **Añadí iconos e imágenes** para que la página se vea más profesional.  
 
-## Dataset Preparation
+---
 
-| Dataset | Download |
+## 🎨 **Diseño y Estilos**  
 
-## Uso
+📌 **Tipografía:**  
+- Se usó **Montserrat** de [Google Fonts](https://fonts.google.com/specimen/Montserrat?query=monts).  
 
-Este proyecto es una página web estática que muestra nuevas colecciones de moda para mujeres y hombres.
+📌 **Colores:**  
+- ⚫ **Negro:** `#212429`  
+- ⚪ **Blanco:** `#ffffff`  
 
-### To view the website
+📌 **Tamaños de fuente:**  
+- **Navbar y footer:** 16px  
+- **Títulos:** 32px  
+- **Texto en tarjetas:** 14px  
 
-1. **Descarga el repositorio:** Primero, descargar el repositorio de GitHub.
-
-2. **Abre el archivo HTML:** Abrir el archivo `index.html`.
-
-### Navigation
-
-- **Menú de Navegación:**
-
-### Product Exploration
-
-- **Productos:**
-
-### Interaction
-
-- **Íconos del menú:**
-
-## Pretrained model
-
-| Model   | Download     |
-| ------- | ------------ |
-| Model-1 | [download]() |
-| Model-2 | [download]() |
-| Model-3 | [download]() |
-
-## Directory Hierarchy
-
-```
-|—— iconos
-|    |—— icon-heart.svg
-|    |—— icon-mail.svg
-|    |—— icon-menu-burguer.svg
-|    |—— icon-phone.svg
-|    |—— icon-shopping-cart.svg
-|    |—— icon-truck.svg
-|    |—— icon-user.svg
-|—— images
-|    |—— image-1.jpg
-|    |—— image-2.jpg
-|    |—— image-3.jpg
-|    |—— image-4.jpg
-|    |—— image-5.jpg
-|    |—— image-6.jpg
-|—— index.html
-|—— README.md
-|—— styles.css
-```
-
-## Code Details
-
-### Tested Platform
-
-- software
-  ```
-  OS: Windows 10
-  Proven browsers: Google Chrome, Mozilla Firefox, Microsoft Edge
-  ```
-- Hardware
-  ```
-  CPU: Intel Core i7-10700K
-  GPU: Nvidia GeForce RTX 3080 (10GB)
-  RAM: 32GB
-  ```
-
-### Hyper parameters
-
-```
-
-```
-
-## References
-
-- [paper-1]()
-- [paper-2]()
-- [code-1](https://github.com)
-- [code-2](https://github.com)
-
-## License
-
-## Citing
-
-If you use xxx,please use the following BibTeX entry.
-
-```
-
-```
+---
