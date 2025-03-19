@@ -29,10 +29,10 @@ Además, también obtiene:
 
 ### Interfaces  
 
-📌 **LineaTicket**: Representa cada línea del ticket.  
-📌 **TicketResult**: Contiene los totales del ticket.  
-📌 **TotalIVA**: Guarda el desglose del IVA por tipo.  
-📌 **TicketFinal**: Estructura completa con las líneas, totales y el desglose de IVA.  
+- **LineaTicket**: Representa cada línea del ticket.  
+- **TicketResult**: Contiene los totales del ticket.  
+- **TotalIVA**: Guarda el desglose del IVA por tipo.  
+- **TicketFinal**: Estructura completa con las líneas, totales y el desglose de IVA.  
 
 ---
 
@@ -40,10 +40,10 @@ Además, también obtiene:
 
 La función `calcularTicket` recibe una lista de productos y calcula todo lo necesario:  
 
-1. **Obtiene** los datos de cada producto.  
-2. **Suma** los totales sin IVA y con IVA.  
-3. **Calcula** el desglose del IVA.  
-4. **Devuelve** un objeto con toda la información organizada.  
+1. Obtiene los datos de cada producto.  
+2. Suma los totales sin IVA y con IVA.  
+3. Calcula el desglose del IVA.  
+4. Devuelve un objeto con toda la información organizada.  
 
 ---
 
