@@ -4,7 +4,7 @@ Este programa calcula el precio de un ticket de compra, teniendo en cuenta los p
 
 La función principal, `calcularTicket`, devuelve un resumen detallado con toda la información del ticket.
 
----
+
 
 ## ¿Qué hace el programa?
 
@@ -23,7 +23,7 @@ Además, también obtiene:
 - Un desglose del IVA por tipo  
 - El total final con impuestos  
 
----
+
 
 ## Estructura del Código  
 
@@ -34,7 +34,7 @@ Además, también obtiene:
 - **TotalIVA**: Guarda el desglose del IVA por tipo.  
 - **TicketFinal**: Estructura completa con las líneas, totales y el desglose de IVA.  
 
----
+
 
 ## Función `calcularTicket`
 
@@ -45,7 +45,7 @@ La función `calcularTicket` recibe una lista de productos y calcula todo lo nec
 3. Calcula el desglose del IVA.  
 4. Devuelve un objeto con toda la información organizada.   
 
----
+
 
 ## Código de la función principal  
 
