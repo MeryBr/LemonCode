@@ -43,7 +43,7 @@ La función `calcularTicket` recibe una lista de productos y calcula todo lo nec
 1. Obtiene los datos de cada producto.  
 2. Suma los totales sin IVA y con IVA.  
 3. Calcula el desglose del IVA.  
-4. Devuelve un objeto con toda la información organizada.  
+4. Devuelve un objeto con toda la información organizada.   
 
 ---
 
