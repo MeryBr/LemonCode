@@ -1,41 +1,38 @@
-# Laboratorio Módulo 8.1 - Bucles
+# Laboratorio Módulo 8.1 - Bucles  
 
-Estamos desarrollando un software hospitalario que permitirá realizar diversas operaciones sobre una lista de pacientes, utilizando bucles (`for`, `while`) para manipular y filtrar datos.
+Este ejercicio consiste en trabajar con una lista de pacientes de un hospital, utilizando bucles `for` para recorrer y modificar los datos.  
 
 ---
 
-## Apartado 1: Filtrar pacientes
+## Apartado 1: Filtrar pacientes  
 
-### a) Pacientes asignados a Pediatría
-Queremos extraer la lista de paciente que están asignados a la especialidad de Pediatría.
+### a) Pacientes asignados a Pediatría  
+Obtener la lista de pacientes que están en la especialidad de Pediatría.  
 
 ```typescript
-const obtenPacientesAsignadosAPediatria = (pacientes: Paciente[]): Paciente[] => {
-    const pacientesPediatria: Paciente[] = [];
-
+const obtenerPacientesPediatria = (pacientes: Pacientes[]): Pacientes[] => {
+    let resultado: Pacientes[] = [];
     for (let i = 0; i < pacientes.length; i++) {
-        if (pacientes[i].especialidad === "Pediatría") {
-            pacientesPediatria.push(pacientes[i]);
+        if (pacientes[i].especialidad === "Pediatra") {
+            resultado.push(pacientes[i]);
         }
     }
-
-    return pacientesPediatria;
+    return resultado;
 };
+
 ```
 
 ### b) Pacientes en Pediatría menores de 10 años
 Queremos extraer la lista de pacientes asignados a Pediatría y que tengan una edad menor de 10 años.
 
 ```typescript
-const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (pacientes: Paciente[]): Paciente[] => {
-    const resultado: Paciente[] = [];
-
+const obtenerPacientesPediatriaMenoresDe10 = (pacientes: Pacientes[]): Pacientes[] => {
+    let resultado: Pacientes[] = [];
     for (let i = 0; i < pacientes.length; i++) {
-        if (pacientes[i].especialidad === "Pediatría" && pacientes[i].edad < 10) {
+        if (pacientes[i].especialidad === "Pediatra" && pacientes[i].edad < 10) {
             resultado.push(pacientes[i]);
         }
     }
-
     return resultado;
 };
 ```
@@ -48,14 +45,13 @@ const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (pacientes: Paciente[
 Queremos activar el protocolo de urgencia si cualquier de los pacientes tiene un ritmo cardíaco superior a 100 pulsaciones por minuto y una temperatura corporal superior a 39 grados.
 
 ```typescript
-const activarProtocoloUrgencia = (pacientes: Paciente[]): boolean => {
+const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
     for (let i = 0; i < pacientes.length; i++) {
         if (pacientes[i].frecuenciaCardiaca > 100 && pacientes[i].temperatura > 39) {
             return true;
         }
     }
-
-  return activarProctolo;
+    return false;
 };
 ```
 
@@ -67,14 +63,13 @@ const activarProtocoloUrgencia = (pacientes: Paciente[]): boolean => {
 El pediatra no puede atender hoy a los pacientes, queremos reasignar los pacientes asignados a la especialidad de pediatría a la de medico de familia.
 
 ```typescript
-const reasignaPacientesAMedicoFamilia = (pacientes: Paciente[]): Paciente[] => {
-  for (let i = 0; i < pacientes.length; i++) {
-    if (pacientes[i].especialidad === "Pediatría") {
-      pacientes[i].especialidad = "Medicina de Familia"; 
+const reasignarPacientesPediatria = (pacientes: Pacientes[]): Pacientes[] => {
+    for (let i = 0; i < pacientes.length; i++) {
+        if (pacientes[i].especialidad === "Pediatra") {
+            pacientes[i].especialidad = "Medico de familia";
+        }
     }
-  }
-
-  return pacientes; 
+    return pacientes;
 };
 ```
 
@@ -86,13 +81,12 @@ const reasignaPacientesAMedicoFamilia = (pacientes: Paciente[]): Paciente[] => {
 Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asignados), comprobar si en la lista hay algún paciente asignado a pediatría.
 
 ```typescript
-const hayPacientesEnPediatria = (pacientes: Paciente[]): boolean => {
+const existenPacientesPediatria = (pacientes: Pacientes[]): boolean => {
     for (let i = 0; i < pacientes.length; i++) {
-        if (pacientes[i].especialidad === "Pediatría") {
+        if (pacientes[i].especialidad === "Pediatra") {
             return true;
         }
     }
-
     return false;
 };
 ```
@@ -106,32 +100,24 @@ Queremos calcular el número total de pacientes que están asignados a la especi
 
 ```typescript
 interface NumeroPacientesPorEspecialidad {
-    medicinaDeFamilia: number;
+    medicoDeFamilia: number;
     pediatria: number;
     cardiologia: number;
 }
 
-const cuentaPacientesPorEspecialidad = (pacientes: Paciente[]): NumeroPacientesPorEspecialidad => {
-    const conteo: NumeroPacientesPorEspecialidad = {
-        medicinaDeFamilia: 0,
-        pediatria: 0,
-        cardiologia: 0,
-    };
+const contarPacientesPorEspecialidad = (pacientes: Pacientes[]): NumeroPacientesPorEspecialidad => {
+    let conteo = { medicoDeFamilia: 0, pediatria: 0, cardiologia: 0 };
 
     for (let i = 0; i < pacientes.length; i++) {
-        switch (pacientes[i].especialidad) {
-            case "Medicina de Familia":
-                conteo.medicinaDeFamilia++;
-                break;
-            case "Pediatría":
-                conteo.pediatria++;
-                break;
-            case "Cardiología":
-                conteo.cardiologia++;
-                break;
+        if (pacientes[i].especialidad === "Medico de familia") {
+            conteo.medicoDeFamilia++;
+        } else if (pacientes[i].especialidad === "Pediatra") {
+            conteo.pediatria++;
+        } else if (pacientes[i].especialidad === "Cardiólogo") {
+            conteo.cardiologia++;
         }
     }
-
+    
     return conteo;
 };
 ```
