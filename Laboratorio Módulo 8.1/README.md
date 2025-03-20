@@ -121,3 +121,5 @@ const contarPacientesPorEspecialidad = (pacientes: Pacientes[]): NumeroPacientes
     return conteo;
 };
 ```
+
+

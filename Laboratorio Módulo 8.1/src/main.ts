@@ -20,7 +20,7 @@ const pacientes: Pacientes[] = [
   { id: 6, nombre: "Brian", apellidos: "Kid", sexo: "Male", temperatura: 39.8, frecuenciaCardiaca: 80, especialidad: "Pediatra", edad: 11 },
 ];
 
-// Apartado 1: Filtrar pacientes
+// Apartado 1: Filtrar pacientes.
 
 const obtenerPacientesPediatria = (pacientes: Pacientes[]): Pacientes[] => {
   let resultado: Pacientes[] = [];
