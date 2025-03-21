@@ -4,10 +4,9 @@
 
 body {
   font-family: 'Poppins', 'Arial', sans-serif;
-  padding: 0;
   margin: 0;
+  padding: 0;
   background-color: #fdf6f0;
-  text-align: center;
   color: #3a3a3a;
 }
 
@@ -15,42 +14,60 @@ h1 {
   font-family: 'Comic Neue', cursive;
   font-size: 2.8rem;
   font-weight: 800;
-  text-align: center;
   text-transform: uppercase;
   color: #1c1c1c;
   letter-spacing: 2px;
   margin: 1.5rem 0;
+  text-align: center;
   text-shadow: 3px 3px 0 #ffffff, 5px 5px 0 #111;
 }
 
 h1 a {
-  color: #1c1c1c !important;
-  text-decoration: none !important;
+  color: #1c1c1c;
+  text-decoration: none;
 }
 
 h1 a:hover {
-  text-decoration: underline !important;
+  text-decoration: underline;
+}
+
+.boton-buscar {
+  background: linear-gradient(45deg, #ffe259, #ffa751);
+  color: #111;
+  border: 2px solid #111;
+  border-radius: 6px;
+  padding: 0.6em 1.2em;
+  margin: 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: 1px 1px #fff;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.boton-buscar:hover {
+  background: linear-gradient(45deg, #ffd000, #ff9100);
+  transform: scale(1.05);
 }
 
 .boton-reset {
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.5s ease, transform 0.5s ease;
-  border: none;
   padding: 0.6em 1.2em;
   margin: 0.5em;
   cursor: pointer;
   font-weight: bold;
   border-radius: 6px;
-  background-color: #fbe9d7;
-  color: #2b2b2b;
+  background: linear-gradient(45deg, #fdfbda, #fceabb);
+  color: #111;
+  border: 2px solid #aaa;
+  text-shadow: 1px 1px #fff;
 }
 
 .boton-reset.mostrar {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 #listado-personajes {
   display: grid;
@@ -75,8 +92,6 @@ h1 a:hover {
 
 .personaje-contenedor img {
   max-height: 180px;
-  width: auto;
-  object-fit: contain;
   border-radius: 6px;
   border: 2px solid #111;
   background-color: #fff;
@@ -89,23 +104,6 @@ h1 a:hover {
   text-align: left;
   font-size: 0.9em;
   margin: 0.5em auto;
-}
-
-.boton-buscar {
-  border: none;
-  padding: 0.6em 1.2em;
-  margin: 0.5em;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 6px;
-  background-color: #c4e3f5;
-  color: #2b2b2b;
-  transition: background 0.2s, transform 0.1s;
-}
-
-.boton-buscar:hover {
-  background-color: #add5e6;
-  transform: scale(1.05);
 }
 
 #formulario-editar-container {
@@ -138,4 +136,23 @@ h1 a:hover {
 #formulario-editar > button {
   margin-top: 1em;
   align-self: center;
+}
+
+form#formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+#listado-personajes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  padding: 2em;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
