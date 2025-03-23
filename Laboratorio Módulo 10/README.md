@@ -15,12 +15,6 @@ Este proyecto es una práctica del módulo 10 centrada en el uso de asincronía 
 - Se muestra dinámicamente el listado de personajes que coinciden con el término.
 - Las imágenes de los personajes se cargan desde `/public`.
 
-## Funcionalidad añadida (extra)
-
-- Se ha añadido un botón adicional: **"🔄 Ver Todos"** que permite volver al listado completo tras una búsqueda.
-- Este botón aparece únicamente después de realizar una búsqueda y desaparece al restaurar el listado.
-
-
 ## Estructura principal
 
 - `/src/index.html` – Contiene el formulario de búsqueda y el contenedor donde se muestran los personajes.
@@ -30,9 +24,19 @@ Este proyecto es una práctica del módulo 10 centrada en el uso de asincronía 
   - `personajes.api.ts` – Peticiones a la API (json-server).
   - `personajes.model.ts` – Tipado de los datos con TypeScript.
 
-## 
+## Dificultades encontradas y mejoras adicionales
 
-**PS:** Dos personajes (Ofelia y Filemón) estaban en las imágenes `/public`, pero no contaban con su entrada correspondiente en el archivo `db.json`.  
-Se añadieron manualmente para completar la base de datos.
+Durante el desarrollo del ejercicio se detectaron ciertos pequeños problemas que fueron resueltos manualmente:
 
+- Dos personajes (`Ofelia` y `Filemón`) aparecían en la carpeta de imágenes (`/public`), pero **no estaban definidos en el archivo `db.json`**, lo que impedía que se mostrasen en el listado.  
+  ➤ Se añadieron manualmente en el archivo JSON para que aparecieran correctamente en la aplicación.
 
+Además de resolver estos inconvenientes, se implementaron mejoras para enriquecer la experiencia de usuario:
+
+- Botón **"🔄 Ver Todos"**: permite volver al listado completo tras una búsqueda.
+  - Solo aparece después de realizar una búsqueda.
+  - Se oculta automáticamente al restaurar la lista completa.
+
+## Vista previa
+
+![Vista previa del ejercicio](./capturas/JS_10.png)
