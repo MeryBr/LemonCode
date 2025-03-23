@@ -51,7 +51,7 @@ Además, se implementaron pequeñas mejoras para que la experiencia fuese más a
 
 ## Tests
 
-También se han añadido tests usando [Vitest](https://vitest.dev/), porque aunque sea un cómic, esto va en serio 😎
+Se incorporaron pruebas unitarias con [Vitest](https://vitest.dev/) para validar la interacción con la API y manejar posibles errores.
 
 ### Ficheros testeados
 
