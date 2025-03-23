@@ -1,0 +1,174 @@
+/* ============ GENERAL ============ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+  text-align: center;
+  padding: 2rem;
+  color: #333;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  background: linear-gradient(45deg, #ffe259, #ffa751);
+  border: 2px solid #111;
+  font-weight: bold;
+  padding: 0.6em 1.5em;
+  margin: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ffd000, #ff9100);
+}
+
+.ocultar {
+  display: none;
+}
+
+/* ============ MENÚ PRINCIPAL ============ */
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin: 3rem 0;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #001aff;
+  border: 2px solid #001aff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background-color: #6078e7;
+  color: rgb(255, 255, 255);
+}
+
+/* ============ TEXTO ============ */
+zona-texto {
+  width: 80%;
+  margin: 1em auto;
+  display: block;
+  padding: 1em;
+  font-family: monospace;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+input[type="text"] {
+  padding: 0.8em 1em;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  width: 350px;
+  max-width: 90%;
+  margin-bottom: 1em;
+}
+
+
+/* ============ IBAN ============ */
+.caja-iban {
+  margin-top: 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #fff8dc;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 6px solid #0905ff;
+  border: 2px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#resultado.caja-iban {
+  margin-top: 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #fff8dc;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 6px solid #ffffff;
+  border: 2px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pagina-iban button {
+  background: linear-gradient(45deg, #00ccff, #0011ff);
+  color: white;
+  border: 2px solid #0011ff;
+}
+
+.pagina-iban button:hover {
+  background: linear-gradient(45deg, #006eff, #afd2dd);
+  transform: scale(1.05);
+}
+
+
+/* ============ IMÁGENES ============ */
+.apartado-imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+  margin-top: 2rem;
+}
+
+.tarjeta-imagen {
+  background-color: #fffaf7;
+  padding: 1em;
+  border-radius: 12px;
+  border-left: 3px solid #ffcb05;
+  border-top: 2px solid #111;
+  border-right: 2px solid #111;
+  border-bottom: 2px solid #111;
+  box-shadow: 3px 3px 0 #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 250px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.tarjeta-imagen:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta-imagen img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  /* border: 1px solid #111;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 2px 2px 0 #000; */
+}

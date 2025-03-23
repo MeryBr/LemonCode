@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Validador de IBAN</title>
+    <link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body class="pagina-iban">
+    <h1>Validar IBAN</h1>
+    <form>
+        <input id="iban" type="text" placeholder="Introduce IBAN" />
+        <button type="submit">Buscar</button>
+        <button type="button" id="borrar">Borrar</button>
+    </form>
+
+    <div id="resultado" class="ocultar"></div>
+
+    <script type="module" src="./iban.ts"></script>
+</body>
+
+</html>
