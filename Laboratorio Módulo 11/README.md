@@ -9,7 +9,7 @@ Este proyecto forma parte del módulo 11 del bootcamp Lemoncode. Incluye dos fun
 
 > Pantalla de entrada donde puedes elegir entre validar un número de cuenta IBAN o extraer imágenes desde código HTML.
 
-![Vista inicial](./assets/JS_11_0.png)
+![Vista inicial](./capturas/JS_11_0.png)
 
 ---
 
@@ -19,7 +19,7 @@ Este proyecto forma parte del módulo 11 del bootcamp Lemoncode. Incluye dos fun
 
 > El usuario puede introducir un IBAN y ver desglosada su información bancaria.
 
-![Vista IBAN](./assets/JS_11_1.png)
+![Vista IBAN](./capturas/JS_11_1.png)
 
 ### Descripción
 
@@ -56,7 +56,7 @@ Este proyecto forma parte del módulo 11 del bootcamp Lemoncode. Incluye dos fun
 
 > Pegando HTML en el textarea, puedes extraer y renderizar las imágenes automáticamente.
 
-![Vista Imágenes](./assets/JS_11_2.png)
+![Vista Imágenes](./capturas/JS_11_2.png)
 
 ### Descripción
 
