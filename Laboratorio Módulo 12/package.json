@@ -1,0 +1,35 @@
+{
+    "name": "06-lab-asincronia",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "vite",
+        "start": "json-server --watch db.json",
+        "dev:all": "concurrently \"npm run start\" \"npm run dev\"",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "test": "vitest"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.8.4",
+        "ibantools": "^4.5.1",
+        "json-server": "^0.17.3"
+    },
+    "devDependencies": {
+        "@types/axios": "^0.14.4",
+        "@types/node": "^22.13.11",
+        "@vitejs/plugin-vue": "^5.2.3",
+        "@vitest/coverage-v8": "^3.0.9",
+        "concurrently": "^8.2.2",
+        "jsdom": "^26.0.0",
+        "typescript": "^5.8.2",
+        "vite": "^6.2.2",
+        "vite-plugin-checker": "^0.9.1",
+        "vite-tsconfig-paths": "^5.1.4",
+        "vitest": "^3.0.9"
+    }
+}
