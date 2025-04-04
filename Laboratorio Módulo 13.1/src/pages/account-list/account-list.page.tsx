@@ -1,5 +1,4 @@
 import React from "react";
-import { AppLayout } from "@/layouts";
 import { AccountVm } from "./account-list.vm";
 import classes from "./account-list.page.module.css";
 import { AccountListTableComponent } from "./components/account-list-table.component";
@@ -16,14 +15,12 @@ export const AccountListPage: React.FC = () => {
   }, []);
 
   return (
-    <AppLayout>
-      <div className={classes.root}>
-        <div className={classes.headerContainer}>
-          <h1>Mis cuentas</h1>
-          <button>AGREGAR NUEVA CUENTA</button>
-        </div>
-        <AccountListTableComponent accountList={accountList} />
+    <div className={classes.root}>
+      <div className={classes.headerContainer}>
+        <h1>Mis cuentas</h1>
+        <button>AGREGAR NUEVA CUENTA</button>
       </div>
-    </AppLayout>
+      <AccountListTableComponent accountList={accountList} />
+    </div>
   );
 };

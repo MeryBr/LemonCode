@@ -6,7 +6,7 @@ import {
   createEmptyCredentialsformErrors,
 } from "../login.vm";
 import { validateForm } from "../login.validation";
-import classes from "./login-form.component.module.css";
+import styles from "./login-form.component.module.css";
 
 interface Props {
   onLogin: (credentials: Credentials) => void;
@@ -38,32 +38,37 @@ export const LoginFormComponent: React.FC<Props> = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={classes.form}>
-      <div>
-        <input
-          type="text"
-          id="username"
-          name="user"
-          onChange={handleFieldChange}
-          className={errors.user ? classes.inputError : ""}
-          placeholder="Usuario"
-        />
-        {errors.user && <p className={classes.error}>{errors.user}</p>}
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <img src="/assets/logo_header.svg" className={styles.logo} alt="logo" />
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div>
+            <input
+              type="text"
+              id="username"
+              name="user"
+              onChange={handleFieldChange}
+              className={errors.user ? styles["input-error"] : ""}
+              placeholder="Usuario"
+            />
+            {errors.user && <p className={styles.error}>{errors.user}</p>}
+          </div>
+          <div>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              onChange={handleFieldChange}
+              className={errors.password ? styles["input-error"] : ""}
+              placeholder="Contraseña"
+            />
+            {errors.password && <p className={styles.error}>{errors.password}</p>}
+          </div>
+          <button type="submit" className={styles["btn-enviar"]}>
+            Acceder
+          </button>
+        </form>
       </div>
-      <div>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          onChange={handleFieldChange}
-          placeholder="Contraseña"
-          className={errors.password ? classes.inputError : ""}
-        />
-        {errors.password && <p className={classes.error}>{errors.password}</p>}
-      </div>
-      <button type="submit" className={classes.btnEnviar}>
-        Acceder
-      </button>
-    </form>
+    </div>
   );
 };

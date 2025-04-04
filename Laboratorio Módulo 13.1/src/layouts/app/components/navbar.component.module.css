@@ -1,24 +1,29 @@
 .navbar {
-  background: var(--secondary_color);
-  margin-bottom: 25px;
-}
-
-.list {
+  background-color: var(--secondary_color);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
-  padding: 10px;
-  gap: 40px;
+  padding: 1rem 0;
+  gap: 4rem;
 }
 
-.list a {
-  color: #ffffff;
+.navbar a {
+  color: white;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.3rem;
+  transition: border-color 0.3s ease;
+  position: relative;
 }
 
-.selected {
-  border-bottom: 5px solid #22c6cb;
-  padding-bottom: 5px;
-  margin-bottom: -10px;
+.navbar a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary_color);
 }

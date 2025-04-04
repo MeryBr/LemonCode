@@ -1,32 +1,32 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { appRoutes, routesPrefixes } from "@/core/router";
-import classes from "./navbar.component.module.css";
-import { useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { appRoutes } from "@/core/router";
+import styles from "./navbar.component.module.css";
 
 export const NavbarComponent: React.FC = () => {
-  const { pathname } = useLocation();
+  const accountId = "1"; 
 
   return (
-    <nav className={classes.navbar}>
-      <ul className={classes.list}>
-        <li
-          className={
-            pathname.startsWith(routesPrefixes.accountList)
-              ? classes.selected
-              : ""
-          }
-        >
-          <Link to={appRoutes.accountList}>Mis Cuentas</Link>
-        </li>
-        <li
-          className={
-            pathname.startsWith(routesPrefixes.transfer) ? classes.selected : ""
-          }
-        >
-          <Link to={appRoutes.transfer}>Transferencias</Link>
-        </li>
-      </ul>
+    <nav className={styles.navbar}>
+      <NavLink
+        to={appRoutes.accountList}
+        className={({ isActive }) => (isActive ? styles.active : "")}
+      >
+        Mis Cuentas
+      </NavLink>
+      <NavLink
+        to={`/movements/${accountId}`}
+        className={({ isActive }) => (isActive ? styles.active : "")}
+      >
+        Movimientos
+      </NavLink>
+      <NavLink
+        to={appRoutes.transfer}
+        className={({ isActive }) => (isActive ? styles.active : "")}
+      >
+        Transferencias
+      </NavLink>
     </nav>
   );
+  
 };

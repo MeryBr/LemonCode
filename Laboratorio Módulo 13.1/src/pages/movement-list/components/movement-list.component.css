@@ -1,0 +1,37 @@
+.movements-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.movements-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem auto 0 auto;
+}
+
+.movements-table th {
+  background-color: #ccc;
+  color: #232c3b;
+  font-size: 16px;
+  font-weight: 900;
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #fff;
+}
+
+.movements-table td {
+  padding: 0.5rem;
+  border: 1px solid #e5e5e5;
+}
+
+.movements-table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.movements-table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.negative {
+  color: red;
+}

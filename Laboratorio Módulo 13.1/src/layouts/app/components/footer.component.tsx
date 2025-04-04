@@ -1,11 +1,12 @@
 import React from "react";
-import logoFooter from "/assets/logo_footer.svg";
-import classes from "./footer.component.module.css";
+import styles from "./footer.component.module.css";
 
-export const FooterComponent: React.FC = () => {
-  return (
-    <footer className={classes.footer}>
-      <img src={logoFooter} className={classes.footerLogo} />
-    </footer>
-  );
-};
+export const FooterComponent: React.FC = () => (
+  <footer className={styles.footer}>
+    <img src="/assets/logo_footer.svg" alt="Logo" className={styles.logo} />
+    <span className={styles.secureText}>
+      <img src="/assets/secure_site.svg" alt="Secure" />
+      Sitio seguro
+    </span>
+  </footer>
+);

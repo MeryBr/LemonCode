@@ -15,9 +15,10 @@ export default defineConfig({
   test: vitestConfig.test,
   css: {
     modules: {
-      localsConvention: "camelCaseOnly",
+      localsConvention: "camelCase",
     },
   },
+  
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

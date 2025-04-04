@@ -1,4 +1,5 @@
 import Axios from "axios";
+
 export interface MovementApi {
   id: string;
   description: string;
@@ -9,12 +10,7 @@ export interface MovementApi {
   accountId: string;
 }
 
-
 const url = `${import.meta.env.VITE_API_URL}/movements`;
 
 export const getMovements = (accountId: string): Promise<MovementApi[]> =>
-  Axios.get<MovementApi[]>(url, {
-    params: {
-      accountId,
-    },
-  }).then((response) => response.data);
+  Axios.get<MovementApi[]>(url, { params: { accountId } }).then(res => res.data);

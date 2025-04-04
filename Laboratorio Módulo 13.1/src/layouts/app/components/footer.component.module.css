@@ -1,12 +1,20 @@
 .footer {
+  background-color: var(--secondary_color);
+  color: white;
+  padding: 1rem 2rem;
   display: flex;
-  background: #232c3b;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  padding: 5em;
-  margin-top: 100px;
 }
 
-.footer_logo {
-  width: 200px;
+.logo {
+  height: 40px;
+}
+
+.secureText {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
 }

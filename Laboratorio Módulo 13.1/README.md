@@ -1,84 +1,108 @@
-# Laboratorio React - Banca Online
+# Laboratorio React - Módulo 13.1 - Movimientos
 
-## Objetivo
+## Introducción
 
-El objetivo de este laboratorio es crear una aplicación web utilizando React aplicando todos los conocimientos obtenidos en el bootcamp.
+Este proyecto es parte del módulo 13.1 del laboratorio de React. El objetivo principal es implementar la pantalla de movimientos de una cuenta bancaria, integrando una API externa, el sistema de rutas y estilos personalizados usando React.
 
-## Instalación
+El desarrollo parte de un ejemplo previo proporcionado por el Bootcamp. Se ha adaptado y extendido para cumplir con los requisitos de esta práctica, incluyendo consumo de APIs, maquetación, y estructura modular.
 
-Para instalar el proyecto, ejecutar el siguiente comando:
+## Funcionalidades implementadas
 
-```bash
-npm install
+- Pantalla de movimientos accesible desde `/movements/:id`
+- Componente `MovementListPage` que se encarga de cargar y renderizar los datos
+- Componente `MovementListComponent` para mostrar los movimientos en una tabla
+- Uso del layout principal de la aplicación (`App`)
+- Llamadas a dos APIs: una para la información de la cuenta, otra para los movimientos
+- Llamadas a API usando `accountId` como parámetro de consulta
+- Transformación de los datos de la API a un formato de ViewModel
+- Estilos aplicados a la tabla con soporte visual para valores negativos
+- Routing configurado con `react-router-dom`
+- Datos reales servidos desde un `json-server` local
+
+## Estructura del proyecto
+
+```
+src/
+├── core/
+│   ├── profile/
+│   └── router/
+├── layouts/
+├── pages/
+│   ├── account/
+│   ├── account-list/
+│   ├── login/
+│   ├── movement-list/
+│   └── transfer/
+├── app.tsx
+├── index.tsx
+├── style.css
 ```
 
-Con este comando se instalarán tanto las dependencias de la aplicación como las del servidor.
+Otros elementos relevantes:
+- `.env`, `index.html`, `README.md`, `vite.config.ts`, `tsconfig.json`
+- Carpetas: `public/`, `server/`, `config/`, `test/`, `dist/`, `node_modules/`
 
-## Ejecución
+## Endpoint utilizado
 
-Para ejecutar el proyecto, ejecutar el siguiente comando:
-
-```bash
-npm run dev
+```
+GET http://localhost:3000/movements?accountId=1
 ```
 
-También se puede hacer desde la raíz de la aplicación, arrancar la aplicación por separado:
+## ViewModel
 
-```bash
-npm run dev
+```ts
+export interface MovementVm {
+  id: string;
+  description: string;
+  amount: string;
+  balance: string;
+  date: string;
+  valueDate: string;
+}
 ```
 
-Y el servidor, vamos a la carpeta server:
+### Mapeo de API a ViewModel
 
-```bash
-cd server
+```ts
+{
+  id: m.id,
+  description: m.description,
+  amount: `${m.amount.toFixed(2)} €`,
+  balance: `${m.balance.toFixed(2)} €`,
+  date: formatDate(m.transaction),
+  valueDate: formatDate(m.realTransaction),
+}
 ```
 
-Y ejecutamos el siguiente comando:
+## Estilos clave
 
-```bash
-npm start
+```css
+.movements-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.movements-table th,
+.movements-table td {
+  border: 1px solid var(--element-border-color);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.negative {
+  color: red;
+}
+
+.movements-container {
+  overflow-x: auto;
+}
 ```
 
-## Acceso
+## Resultado
 
-Para poder logarse en la aplicación, se debe utilizar el siguiente usuario y contraseña:
+La página de movimientos muestra correctamente los datos formateados, incluyendo fechas legibles, importes en euros, y estilos aplicados. Se usó `json-server` para cargar los datos reales, y la maquetación se adaptó visualmente al diseño proporcionado.
 
-```bash
-Usuario: admin@email.com
-Contraseña: test
-```
-
-## Descripción
-
-La aplicación consiste en una banca online, donde el usuario puede ver sus cuentas, ver los movimientos de una cuenta y hacer transferencias.
-
-Vamos a tener las siguientes pantallas:
-
-- Login
-- Mis cuentas
-- Creación y edición de cuentas
-- Movimientos de una cuenta
-- Transferencias tanto desde un enlace cómo a partir de movimientos hacer una transferencia desde una cuenta determinada.
-
-## Requisitos
-
-- La aplicación debe está desarrollada con React.
-- El backend está montado sobre JSON Server.
-- La aplicación es responsive.
-- La aplicación tiene un menú superior con las siguientes opciones:
-  - Mis cuentas
-  - Transferencias
-  - Movimientos, solo se quiere ver los movimientos de una cuenta.
-
-## Servidor
-
-El servidor está montado sobre JSON Server, y tiene los siguientes endpoints:
-
-- La URL base es: http://localhost:3000/api, se puede cambiar el puerto en el fichero package.json.
-- Para obtener el listado de cuentas: GET /account-list
-- Para obtener una cuenta: GET /account-list/:id
-- Para crear una cuenta: POST /account-list
-- Para editar una cuenta: PATCH /account-list/:id, por el tema que cuando se crea una cuenta en backend se asignan unos campos específicos, que se pueden ver en el fichero account.middleware.js.
-- Para obtener los movimientos de una cuenta: GET /movements/:id
-- Para hacer una transferencia: POST /transfer.
+![Resultado Movimientos](./public/assets/JS_13_1.png)

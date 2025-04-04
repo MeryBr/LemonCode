@@ -5,19 +5,16 @@ import {
   FooterComponent,
 } from "./components";
 import classes from "./app-layout.module.css";
+import { Outlet } from "react-router-dom"; 
 
-interface Props {
-  children: React.ReactNode;
-}
-
-export const AppLayout: React.FC<Props> = (props) => {
-  const { children } = props;
-
+export const AppLayout: React.FC = () => {
   return (
     <>
       <HeaderComponent />
       <NavbarComponent />
-      <main className={classes.mainContent}>{children}</main>
+      <main className={classes.mainContent}>
+        <Outlet />
+      </main>
       <FooterComponent />
     </>
   );
