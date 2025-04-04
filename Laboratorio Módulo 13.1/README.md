@@ -1,27 +1,25 @@
+
 # Laboratorio Módulo 13.1 - React Movimientos
 
-Este ejercicio corresponde al módulo 13.1 del Bootcamp y tiene como objetivo construir una pantalla en React para mostrar los movimientos bancarios de una cuenta. El proyecto se basa en un ejemplo previo del Bootcamp, que se ha ampliado para consumir datos reales desde un servidor local (`json-server`) y mejorar su maquetación y funcionalidad.
-
-## Objetivo
-
-Crear una vista que muestre los movimientos de una cuenta bancaria, accediendo a los datos a través de una API REST. Además de la integración de datos, se buscó replicar el diseño visual entregado, manteniendo una estructura de carpetas clara y un uso correcto del layout de la aplicación.
+Este laboratorio pertenece al módulo 13.1 del Bootcamp. El objetivo es construir una pantalla en React que mostrara claramente los movimientos bancarios de una cuenta, utilizando datos reales desde una API local (`json-server`).
 
 ## Funcionalidades implementadas
 
-- Página de movimientos accesible mediante una ruta dinámica: `/movements/:id`.
-- Uso del layout principal con cabecera, navegación y pie de página.
-- Carga de datos desde dos endpoints:
-  - Información de la cuenta (`/account-list/:id`)
-  - Detalle de movimientos (`/movements?accountId=1`)
-- Integración de `useParams` para obtener el parámetro dinámico desde la URL.
-- Llamadas a la API gestionadas con Axios.
-- Uso de un ViewModel (`MovementVm`) y un mapper para transformar los datos recibidos.
+- Página dinámica que muestra los movimientos según la cuenta seleccionada (`/movements/:id`).
+- Uso del layout base del proyecto con cabecera, navegación y pie de página.
+- Consumo de datos reales desde dos endpoints:
+  - Información general de la cuenta (`/account-list/:id`).
+  - Listado detallado de movimientos (`/movements?accountId=1`).
+- Captura del parámetro dinámico desde la URL con React Router y `useParams`.
+- Gestión de peticiones HTTP mediante Axios.
+- Uso de un ViewModel (`MovementVm`) para estructurar claramente los datos recibidos.
+- Formateo específico para fechas y valores numéricos (día/mes/año y euros con comas decimales).
 - Tabla estilizada con:
-  - Líneas alternas para mejorar la lectura
-  - Colores personalizados y celdas con bordes
-  - Soporte para valores negativos con estilos diferenciados
-- Diseño responsive con scroll horizontal cuando es necesario.
-- Separación modular del código en carpetas por responsabilidad.
+  - Filas alternas para facilitar la lectura.
+  - Valores negativos claramente diferenciados con un espacio entre el signo menos y la cifra.
+  - Diseño de cabecera según el estilo solicitado.
+- Diseño responsive con scroll horizontal en pantallas pequeñas.
+- Estructuración modular con componentes, estilos, ViewModels y mappers claramente separados.
 
 ## Endpoint utilizado
 
@@ -35,7 +33,7 @@ GET http://localhost:3000/movements?accountId=1
 import Axios from "axios";
 import { Movement } from "./movements.api-model";
 
-const urlMovements = \`\${import.meta.env.VITE_BASE_API_URL}/movements\`;
+const urlMovements = `${import.meta.env.VITE_BASE_API_URL}/movements`;
 
 export const getMovements = (accountId: string): Promise<Movement[]> =>
   Axios.get<Movement[]>(urlMovements, { params: { accountId } }).then(
@@ -56,9 +54,34 @@ export interface MovementVm {
 }
 ```
 
+## Estructura del proyecto
+
+```
+src/
+├── core/
+│   ├── profile/
+│   └── router/
+├── layouts/
+├── pages/
+│   ├── account/
+│   ├── account-list/
+│   ├── login/
+│   ├── movement-list/
+│   └── transfer/
+├── app.tsx
+├── index.tsx
+├── style.css
+```
+
+## Desarrollo y dificultades encontradas
+
+Inicialmente se trabajó con datos mock para avanzar rápidamente en la estructura y la maquetación del componente. Posteriormente se integró con la API real (`json-server`). Uno de los principales desafíos fue manejar correctamente el `accountId` mediante `useParams` para asegurar la precisión en las llamadas a la API, además del mapeo y formato adecuado de los datos recibidos (fechas e importes).
+
+En el aspecto visual, se dedicó tiempo a ajustar cuidadosamente la cabecera, los espacios entre secciones, el estilo del navbar y las filas alternas en la tabla. Además, se garantizó la correcta visualización en distintas resoluciones, prestando especial atención al diseño adaptable.
+
+
 ## Resultado visual
 
-Se replicó correctamente la interfaz de movimientos mostrada en el ejemplo del profesor.  
-La tabla presenta los movimientos con fechas y valores formateados, y el diseño general sigue los estilos del layout base de la app.
+Se replicó la interfaz solicitada, logrando una vista funcional, estilizada y ajustada al diseño original.
 
 ![Resultado Movimientos](./public/assets/JS_13_1.png)
