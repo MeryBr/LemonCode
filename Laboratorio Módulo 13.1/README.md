@@ -1,29 +1,27 @@
-# Bootcamp JS 2 - Laboratorio Módulo 13.1 - React Movimientos
+# Laboratorio Módulo 13.1 - React Movimientos
 
-## Punto de partida
+Este ejercicio corresponde al módulo 13.1 del Bootcamp y tiene como objetivo construir una pantalla en React para mostrar los movimientos bancarios de una cuenta. El proyecto se basa en un ejemplo previo del Bootcamp, que se ha ampliado para consumir datos reales desde un servidor local (`json-server`) y mejorar su maquetación y funcionalidad.
 
-Este módulo parte de un ejemplo anterior del Bootcamp. El objetivo es implementar una página de movimientos reales de una cuenta bancaria utilizando React.
+## Objetivo
 
-## Funcionalidad implementada
+Crear una vista que muestre los movimientos de una cuenta bancaria, accediendo a los datos a través de una API REST. Además de la integración de datos, se buscó replicar el diseño visual entregado, manteniendo una estructura de carpetas clara y un uso correcto del layout de la aplicación.
 
-- Página accesible desde la ruta `/movements/:id`
-- Uso del layout principal de la aplicación con Header, Navbar y Footer
-- Navbar con subrayado dinámico para la ruta activa
-- Dos llamadas a API:
-  - `/account-list/:id` para obtener la información de la cuenta
-  - `/movements?accountId=1` para recuperar los movimientos
-- Uso de `useParams` para obtener dinámicamente el `accountId`
-- Peticiones a la API realizadas con Axios utilizando parámetros de consulta
-- Creación de un ViewModel (`MovementVm`) para estructurar los datos
-- Implementación de un mapper para transformar datos de API al ViewModel
-- Maquetación y estilado de la tabla de movimientos de acuerdo al diseño de referencia
-- Estilos personalizados:
-  - Cabecera con fondo oscuro
-  - Visualización del alias, IBAN y saldo disponible
-  - Tabla con diseño tipo "zebra" (líneas alternas)
-  - Celdas con borde blanco
-- Estructura modular del proyecto con separación en carpetas
-- Diseño responsive adaptado al diseño original
+## Funcionalidades implementadas
+
+- Página de movimientos accesible mediante una ruta dinámica: `/movements/:id`.
+- Uso del layout principal con cabecera, navegación y pie de página.
+- Carga de datos desde dos endpoints:
+  - Información de la cuenta (`/account-list/:id`)
+  - Detalle de movimientos (`/movements?accountId=1`)
+- Integración de `useParams` para obtener el parámetro dinámico desde la URL.
+- Llamadas a la API gestionadas con Axios.
+- Uso de un ViewModel (`MovementVm`) y un mapper para transformar los datos recibidos.
+- Tabla estilizada con:
+  - Líneas alternas para mejorar la lectura
+  - Colores personalizados y celdas con bordes
+  - Soporte para valores negativos con estilos diferenciados
+- Diseño responsive con scroll horizontal cuando es necesario.
+- Separación modular del código en carpetas por responsabilidad.
 
 ## Endpoint utilizado
 
@@ -31,13 +29,13 @@ Este módulo parte de un ejemplo anterior del Bootcamp. El objetivo es implement
 GET http://localhost:3000/movements?accountId=1
 ```
 
-### Ejemplo de uso de Axios
+### Ejemplo de llamada con Axios
 
 ```ts
 import Axios from "axios";
 import { Movement } from "./movements.api-model";
 
-const urlMovements = `${import.meta.env.VITE_BASE_API_URL}/movements`;
+const urlMovements = \`\${import.meta.env.VITE_BASE_API_URL}/movements\`;
 
 export const getMovements = (accountId: string): Promise<Movement[]> =>
   Axios.get<Movement[]>(urlMovements, { params: { accountId } }).then(
@@ -60,7 +58,7 @@ export interface MovementVm {
 
 ## Resultado visual
 
-Se ha replicado el diseño del ejemplo proporcionado por el profesor.  
-La página de movimientos muestra correctamente los datos formateados y estilizados de manera profesional.
+Se replicó correctamente la interfaz de movimientos mostrada en el ejemplo del profesor.  
+La tabla presenta los movimientos con fechas y valores formateados, y el diseño general sigue los estilos del layout base de la app.
 
 ![Resultado Movimientos](./public/assets/JS_13_1.png)
