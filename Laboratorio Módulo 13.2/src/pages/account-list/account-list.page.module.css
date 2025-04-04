@@ -4,7 +4,7 @@
   padding: 5px;
 }
 
-.header-container {
+.headerContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,7 +13,7 @@
   border-bottom: 5px solid #232c3b;
 }
 
-.header-container h1 {
-  font-size: 2.2rem;
-  font-weight: 300;
+.headerContainer h1 {
+  line-height: 1.1;
 }
+

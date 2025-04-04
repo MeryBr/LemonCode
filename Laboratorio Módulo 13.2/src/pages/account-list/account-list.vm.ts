@@ -4,4 +4,5 @@ export interface AccountVm {
   name: string;
   balance: string;
   lastTransaction: Date;
+  type: string;
 }

@@ -18,7 +18,20 @@
 
 .btn-enviar {
   width: 25%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.6rem 1.5rem;
+  background-color: #1abc9c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
+
 
 @media screen and (max-width: 500px) {
   .btn-enviar {
@@ -26,26 +39,27 @@
   }
 }
 
-.container {
-  display: flex;
-  height: 100vh;
-  background-image: url("/assets/bg_login.jpg");
-  background-size: cover;
-  background-position: center;
-  justify-content: center;
-  align-items: center;
-}
 
-.card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  width: 400px;
+.box {
+  background: transparent;
+  padding: 1.5rem 1rem;
+  border-radius: 0;
+  box-shadow: none;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
+
+.card {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  width: auto;
+}
+
 
 .logo {
   display: block;

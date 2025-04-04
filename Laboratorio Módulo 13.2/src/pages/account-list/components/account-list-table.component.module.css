@@ -1,18 +1,68 @@
-.grid-container {
+.gridContainer {
   max-width: 100%;
   overflow-x: auto;
+  padding: 1rem;
 }
 
-.header-table {
+.headerTable {
   display: grid;
-  grid-template-columns: 30% 12% repeat(2, 17%) 1fr;
-  gap: 1px;
+  grid-template-columns: 35% 15% 15% 15% 1fr;
+  gap: 0;
+  background-color: var(--table-header-background-color);
+  border-bottom: 1px solid #fff;
 }
 
-.header-cell {
-  padding: 10px;
+.headerCell {
   color: var(--table-header-color);
-  background-color: var(--table-header-background-color);
   font-size: var(--table-header-font-size);
   font-weight: var(--table-header-font-weight);
+  text-align: left;
+  padding: 15px;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+
+.tableBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 35% 15% 15% 15% 1fr;
+}
+
+.row:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.row:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.cell {
+  font-size: 16px;
+  color: #232c3b;
+  text-align: left;
+  padding: 15px;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+
+.cell:last-child {
+  border-right: 1px solid #fff;
+}
+
+.button {
+  background-color: #1abc9c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #16a085;
 }

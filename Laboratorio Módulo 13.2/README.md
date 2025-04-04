@@ -1,56 +1,58 @@
+# Laboratorio Módulo 13.2 - React: Agregar Cuenta
 
-# Laboratorio Módulo 13.1 - React Movimientos
+Este ejercicio pertenece al módulo 13.2 del Bootcamp de JavaScript. El objetivo principal fue permitir que un usuario pudiera agregar una cuenta bancaria desde la aplicación, utilizando React y una API simulada con `json-server`.
 
-Este laboratorio pertenece al módulo 13.1 del Bootcamp. El objetivo es construir una pantalla en React que mostrara claramente los movimientos bancarios de una cuenta, utilizando datos reales desde una API local (`json-server`).
+El trabajo consistió en crear una vista de formulario conectada al backend mock, hacer validaciones básicas y asegurarse de que, una vez enviada la cuenta, el usuario fuera redirigido al listado de cuentas actualizado. También se prestó atención al diseño visual para mantener la coherencia con el resto de la app.
+
+## Objetivo
+
+Permitir que el usuario agregue una nueva cuenta bancaria, eligiendo su tipo (corriente o ahorro) e ingresando un alias, y enviar esos datos al servidor. El servidor se encarga de generar el IBAN, el balance y la fecha de última transacción.
 
 ## Funcionalidades implementadas
 
-- Página dinámica que muestra los movimientos según la cuenta seleccionada (`/movements/:id`).
-- Uso del layout base del proyecto con cabecera, navegación y pie de página.
-- Consumo de datos reales desde dos endpoints:
-  - Información general de la cuenta (`/account-list/:id`).
-  - Listado detallado de movimientos (`/movements?accountId=1`).
-- Captura del parámetro dinámico desde la URL con React Router y `useParams`.
-- Gestión de peticiones HTTP mediante Axios.
-- Uso de un ViewModel (`MovementVm`) para estructurar claramente los datos recibidos.
-- Formateo específico para fechas y valores numéricos (día/mes/año y euros con comas decimales).
-- Tabla estilizada con:
-  - Filas alternas para facilitar la lectura.
-  - Valores negativos claramente diferenciados con un espacio entre el signo menos y la cifra.
-  - Diseño de cabecera según el estilo solicitado.
-- Diseño responsive con scroll horizontal en pantallas pequeñas.
-- Estructuración modular con componentes, estilos, ViewModels y mappers claramente separados.
+- Botón en el listado de cuentas que lleva a la ruta `/create-account`.
+- Componente para agregar cuenta, con formulario que incluye:
+  - Select de tipo de cuenta (corriente o ahorro).
+  - Campo de alias.
+- Validaciones:
+  - No se puede enviar el formulario si falta alguno de los campos.
+- Envío de datos con método `POST` al endpoint de cuentas.
+- Redirección automática al listado de cuentas tras el guardado.
+- Refresco del listado con la cuenta nueva incluida.
+- Uso del layout principal (`AppLayout`) para mantener diseño consistente.
+- IBAN generado por el servidor mock, no es responsabilidad del cliente.
+- Diseño responsive para móviles y escritorio.
 
 ## Endpoint utilizado
 
 ```
-GET http://localhost:3000/movements?accountId=1
+ACCESO http://localhost:5173/
+
+POST http://localhost:3000/account-list
 ```
 
 ### Ejemplo de llamada con Axios
 
 ```ts
 import Axios from "axios";
-import { Movement } from "./movements.api-model";
+import { Account } from "./account.api-model";
 
-const urlMovements = `${import.meta.env.VITE_BASE_API_URL}/movements`;
+const url = \`\${import.meta.env.VITE_API_URL}/account-list\`;
 
-export const getMovements = (accountId: string): Promise<Movement[]> =>
-  Axios.get<Movement[]>(urlMovements, { params: { accountId } }).then(
-    ({ data }) => data
-  );
+export const saveAccount = (account: Account): Promise<Account> =>
+  Axios.post<Account>(url, account).then(({ data }) => data);
 ```
 
 ## ViewModel utilizado
 
 ```ts
-export interface MovementVm {
+export interface AccountVm {
   id: string;
-  description: string;
-  amount: string;
+  iban: string;
+  name: string;
   balance: string;
-  date: string;
-  valueDate: string;
+  lastTransaction: Date;
+  type: string;
 }
 ```
 
@@ -75,13 +77,42 @@ src/
 
 ## Desarrollo y dificultades encontradas
 
-Inicialmente se trabajó con datos mock para avanzar rápidamente en la estructura y la maquetación del componente. Posteriormente se integró con la API real (`json-server`). Uno de los principales desafíos fue manejar correctamente el `accountId` mediante `useParams` para asegurar la precisión en las llamadas a la API, además del mapeo y formato adecuado de los datos recibidos (fechas e importes).
+Una parte clave fue que la cuenta nueva apareciera correctamente en el listado al volver desde el formulario. También fue importante evitar errores comunes al acceder al DOM, usando `instanceof` y control de nulls en lugar de `as`.
 
-En el aspecto visual, se dedicó tiempo a ajustar cuidadosamente la cabecera, los espacios entre secciones, el estilo del navbar y las filas alternas en la tabla. Además, se garantizó la correcta visualización en distintas resoluciones, prestando especial atención al diseño adaptable.
+Tuve que ajustar los estilos para que todo se vea limpio: evitar tarjetas innecesarias, centrar el botón, distribuir los campos con buen espaciado, y que el formulario se adaptara bien a distintos tamaños de pantalla.
+
+Validar el formulario sin depender de coerciones también fue parte del aprendizaje, usando buenas prácticas para mantener el código seguro y predecible.
+
+## Mejoras aplicadas
+
+- Validaciones sin `as` ni `!`, usando `instanceof` y control de tipos.
+- Limpieza de imports no usados.
+- Uso correcto de `useState` para controlar campos del formulario.
+- Separación por carpetas con componentes reutilizables.
+- Diseño responsive tanto en la tabla como en el formulario.
+
+
+## Página de acceso
+
+Antes de poder crear o visualizar cuentas, el usuario debe iniciar sesión.  
+Se creó una página de acceso en la ruta:
+
+```
+http://localhost:5173/
+```
+
+### Credenciales disponibles
+
+- **Email:** admin@email.com  
+- **Contraseña:** test
 
 
 ## Resultado visual
 
-Se replicó la interfaz solicitada, logrando una vista funcional, estilizada y ajustada al diseño original.
+### Acceso al sistema
 
-![Resultado Movimientos](./public/assets/JS_13_1.png)
+![Acceso](./public/assets/JS_13_2_ACCESO.png)
+
+### Lista de cuentas con cuenta agregada
+
+![Cuentas](./public/assets/JS_13_2.png)

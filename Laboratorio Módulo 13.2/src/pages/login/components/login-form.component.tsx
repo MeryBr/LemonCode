@@ -39,8 +39,7 @@ export const LoginFormComponent: React.FC<Props> = ({ onLogin }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.card}>
-        <img src="/assets/logo_header.svg" className={styles.logo} alt="logo" />
+      <div className={styles.box}>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div>
             <input
@@ -65,7 +64,7 @@ export const LoginFormComponent: React.FC<Props> = ({ onLogin }) => {
             {errors.password && <p className={styles.error}>{errors.password}</p>}
           </div>
           <button type="submit" className={styles["btn-enviar"]}>
-            Acceder
+          Acceder
           </button>
         </form>
       </div>
