@@ -6,7 +6,6 @@ export const FooterComponent: React.FC = () => (
     <img src="/assets/logo_footer.svg" alt="Logo" className={styles.logo} />
     <span className={styles.secureText}>
       <img src="/assets/secure_site.svg" alt="Secure" />
-      Sitio seguro
     </span>
   </footer>
 );
