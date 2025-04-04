@@ -101,8 +101,7 @@ export interface MovementVm {
 }
 ```
 
-## Resultado
-
-La página de movimientos muestra correctamente los datos formateados, incluyendo fechas legibles, importes en euros, y estilos aplicados. Se usó `json-server` para cargar los datos reales, y la maquetación se adaptó visualmente al diseño proporcionado.
+## Resultado final
 
 ![Resultado Movimientos](./public/assets/JS_13_1.png)
+
