@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warner Live - Top 5 Hoy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="branding">
+            <img src="assets/logo.png" alt="Warner Bros Logo" class="logo" />
+            <span class="title">Warner Live</span>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="popular-today">
+        <h2>Los <span class="dynamic-number">5</span> más populares hoy</h2>
+        <div class="popular-list">
+            <a href="#" class="popular-item">
+                <span class="big-number">1</span>
+                <img src="assets/popular1.jpg" alt="Minions" />
+            </a>
+            <a href="#" class="popular-item">
+                <span class="big-number">2</span>
+                <img src="assets/popular2.jpg" alt="Lilo y Stitch" />
+            </a>
+            <a href="#" class="popular-item">
+                <span class="big-number">3</span>
+                <img src="assets/popular3.jpg" alt="Ratatouille" />
+            </a>
+            <a href="#" class="popular-item">
+                <span class="big-number">4</span>
+                <img src="assets/popular4.jpg" alt="Encanto" />
+            </a>
+            <a href="#" class="popular-item">
+                <span class="big-number">5</span>
+                <img src="assets/popular5.jpg" alt="Zootopia" />
+            </a>
+        </div>
+    </section>
+
+
+    <section class="more-titles">
+        <h2>Más títulos recomendados</h2>
+        <div class="carousel-container">
+            <button class="carousel-btn prev">‹</button>
+            <div class="grid">
+                <div class="card"><a href="#"><img src="assets/extra1.jpg" alt="Paddington" /></a></div>
+                <div class="card"><a href="#"><img src="assets/extra2.jpg" alt="Sing" /></a></div>
+                <div class="card"><a href="#"><img src="assets/extra3.jpg" alt="Coco" /></a></div>
+                <div class="card"><a href="#"><img src="assets/extra4.jpg" alt="Frozen" /></a></div>
+                <div class="card"><a href="#"><img src="assets/extra5.jpg" alt="Toy Story" /></a></div>
+                <div class="card"><a href="#"><img src="assets/extra6.jpg" alt="Brave" /></a></div>
+                <div class="card"><a href="#"><img src="assets/extra7.jpg" alt="Up" /></a></div>
+                <div class="card"><a href="#"><img src="assets/extra8.jpg" alt="Moana" /></a></div>
+                <div class="card"><a href="#"><img src="assets/extra9.jpg" alt="The Incredibles" /></a></div>
+                <div class="card"><a href="#"><img src="assets/extra10.jpg" alt="Inside Out" /></a></div>
+                <div class="card"><a href="#"><img src="assets/extra11.jpg" alt="Los pingüinos de Madagascar" /></a>
+                </div>
+            </div>
+            <button class="carousel-btn next">›</button>
+        </div>
+
+        <script>
+            const grid = document.querySelector('.more-titles .grid');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            const nextBtn = document.querySelector('.carousel-btn.next');
+
+            const scrollAmount = 200;
+
+            prevBtn.addEventListener('click', () => {
+                grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        </script>
+    </section>
+
+
+    <footer class="footer">
+        <p>© 2025 Warner Live · Proyecto educativo</p>
+    </footer>
+</body>
+
+</html>
