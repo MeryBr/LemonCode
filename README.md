@@ -1,40 +1,40 @@
 # 🍋 LemonCode
 
-Este repositorio contiene mi trayecto formativo en **LemonCode**, un bootcamp intensivo de desarrollo web full-stack.
+This repository contains my learning journey at **LemonCode**, an intensive full-stack web development bootcamp.
 
 ---
 
-### **Bootcamp Full-Stack JavaScript**  
-Desarrollo de páginas web, contenido digital y recursos informáticos.
+### **Full-Stack JavaScript Bootcamp**  
+Web development, digital content and computing resources.
 
-Formación intensiva y 100% práctica, enfocada en la construcción de aplicaciones reales con:
-- Testing
-- Control de versiones
-- Buenas prácticas
-- Despliegue profesional
-
----
-
-### Tecnologías utilizadas
-
-- JavaScript (ES6+), TypeScript  
-- HTML5, CSS3  
-- Git, GitHub  
-- React.js (Hooks, componentes funcionales)  
-- Testing con Vitest y Jest  
-- Herramientas: Visual Studio Code, Vite, Postman
+Intensive and 100% hands-on training, focused on building real applications with:
+* Testing
+* Version control
+* Best practices
+* Professional deployment
 
 ---
 
-### Proyectos destacados
+### Technologies used
 
-- 🔍 Aplicación asincrónica de búsqueda de personajes (API REST)
-- ✅ Validación de formularios con expresiones regulares
-- 🏨 Sistema de reservas de hotel con lógica orientada a objetos
-- 🧪 Cobertura de pruebas unitarias, documentación técnica y entrega profesional
+* JavaScript (ES6+), TypeScript  
+* HTML5, CSS3  
+* Git, GitHub  
+* React.js (Hooks, functional components)  
+* Testing with Vitest and Jest  
+* Tools: Visual Studio Code, Vite, Postman
 
 ---
 
-### Objetivo personal
+### Featured projects
 
-Aplicar todo lo aprendido en proyectos reales, seguir creciendo como desarrolladora frontend y aportar valor en equipos de desarrollo.
+* 🔍 Asynchronous character search application (REST API)
+* ✅ Form validation with regular expressions
+* 🏨 Hotel booking system with object-oriented logic
+* 🧪 Unit test coverage, technical documentation and professional delivery
+
+---
+
+### Personal goal
+
+To apply everything I've learned in real projects, keep growing as a frontend developer and bring value to development teams.
